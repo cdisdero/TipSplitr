@@ -1,0 +1,17 @@
+name: Testing
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  test:
+    name: Test app
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use Xcode version
+        run: sudo xcode-select -switch /Applications/Xcode_12_beta.app
+      - name: Test app
+        run: exec ./.github/scripts/test_app.sh

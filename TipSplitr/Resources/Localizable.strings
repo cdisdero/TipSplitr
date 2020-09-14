@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TipSplitr
+
+  Created by Christopher Disdero on 9/13/20.
+  
+*/
+
+"app.title" = "Tip Splitr";
+
+// Tip Calculator Screen
+"calculator.screen.header.amount" = "Amount";
+"calculator.screen.textfield.placeholder.amount" = "Amount";
+"calculator.screen.header.numberofpeople" = "Number of people";
+"calculator.screen.header.tippercentage" = "Tip percentage";
+"calculator.screen.picker.label.tippercentage" = "Tip percentage";
+"calculator.screen.header.amountperperson" = "Amount per person";
+"calculator.screen.header.totalamount" = "Total amount";
