@@ -11,15 +11,17 @@ extension NumberFormatter {
     static let currency: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
         return formatter
     }()
 
-    static let currencyEditing: NumberFormatter = {
+    static let decimal: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ""
-        formatter.minimumFractionDigits = NumberFormatter.currency.minimumFractionDigits
-        formatter.maximumFractionDigits = NumberFormatter.currency.maximumFractionDigits
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
         return formatter
     }()
     

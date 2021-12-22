@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4705679927716F9F002E8CC6 /* CurrencyTextFieldFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705679827716F9F002E8CC6 /* CurrencyTextFieldFormatterTests.swift */; };
+		4705679B2771AFF0002E8CC6 /* Decimal+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705679A2771AFF0002E8CC6 /* Decimal+Rounding.swift */; };
 		471CAE29250D9A3E009188CE /* TipSplitrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471CAE28250D9A3E009188CE /* TipSplitrApp.swift */; };
 		471CAE2B250D9A3E009188CE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471CAE2A250D9A3E009188CE /* MainView.swift */; };
 		471CAE2D250D9A40009188CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471CAE2C250D9A40009188CE /* Assets.xcassets */; };
@@ -35,7 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4712D3D22516E59F00FD9606 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
+		4705679827716F9F002E8CC6 /* CurrencyTextFieldFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldFormatterTests.swift; sourceTree = "<group>"; };
+		4705679A2771AFF0002E8CC6 /* Decimal+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Rounding.swift"; sourceTree = "<group>"; };
 		471CAE25250D9A3E009188CE /* TipSplitr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipSplitr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		471CAE28250D9A3E009188CE /* TipSplitrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSplitrApp.swift; sourceTree = "<group>"; };
 		471CAE2A250D9A3E009188CE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -55,8 +58,6 @@
 		473AA7DA250EF6BD00305BD1 /* TipCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorTests.swift; sourceTree = "<group>"; };
 		473AA7DC250EF6BD00305BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		473AA7E2250EFA5400305BD1 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
-		47634793250F0840006087A9 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = .github/scripts; sourceTree = "<group>"; };
-		47634795250F084C006087A9 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = .github/workflows; sourceTree = "<group>"; };
 		47A7163C250ECE4100F848B3 /* TipCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,11 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				473009B9250F2453004190AE /* README.md */,
-				47634793250F0840006087A9 /* scripts */,
-				47634795250F084C006087A9 /* workflows */,
 				471CAE27250D9A3E009188CE /* TipSplitr */,
 				473AA7D9250EF6BD00305BD1 /* TipSplitrTests */,
 				471CAE26250D9A3E009188CE /* Products */,
+				47A4AF0825992AA40015D2FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +109,6 @@
 				471CAE46250EB429009188CE /* Views */,
 				471CAE41250EAB1A009188CE /* Extensions */,
 				471CAE31250D9A40009188CE /* Info.plist */,
-				4712D3D22516E59F00FD9606 /* ExportOptions.plist */,
 				471CAE2E250D9A40009188CE /* Preview Content */,
 			);
 			path = TipSplitr;
@@ -128,6 +127,7 @@
 			children = (
 				471CAE42250EAB2E009188CE /* String+Localizable.swift */,
 				471CAE3B250E962E009188CE /* NumberFormatter+TextFieldFormatting.swift */,
+				4705679A2771AFF0002E8CC6 /* Decimal+Rounding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,9 +172,17 @@
 			children = (
 				473AA7DA250EF6BD00305BD1 /* TipCalculatorTests.swift */,
 				473AA7E2250EFA5400305BD1 /* MainViewModelTests.swift */,
+				4705679827716F9F002E8CC6 /* CurrencyTextFieldFormatterTests.swift */,
 				473AA7DC250EF6BD00305BD1 /* Info.plist */,
 			);
 			path = TipSplitrTests;
+			sourceTree = "<group>";
+		};
+		47A4AF0825992AA40015D2FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		47A7163E250ED2FB00F848B3 /* ViewModel */ = {
@@ -203,6 +211,8 @@
 			dependencies = (
 			);
 			name = TipSplitr;
+			packageProductDependencies = (
+			);
 			productName = WeSplit;
 			productReference = 471CAE25250D9A3E009188CE /* TipSplitr.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +262,8 @@
 				Base,
 			);
 			mainGroup = 471CAE1C250D9A3E009188CE;
+			packageReferences = (
+			);
 			productRefGroup = 471CAE26250D9A3E009188CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				471CAE3E250E9694009188CE /* FormattedTextField.swift in Sources */,
+				4705679B2771AFF0002E8CC6 /* Decimal+Rounding.swift in Sources */,
 				471CAE2B250D9A3E009188CE /* MainView.swift in Sources */,
 				471CAE29250D9A3E009188CE /* TipSplitrApp.swift in Sources */,
 				471CAE3A250E95F2009188CE /* CurrencyTextFieldFormatter.swift in Sources */,
@@ -306,6 +319,7 @@
 			files = (
 				473AA7DB250EF6BD00305BD1 /* TipCalculatorTests.swift in Sources */,
 				473AA7E3250EFA5400305BD1 /* MainViewModelTests.swift in Sources */,
+				4705679927716F9F002E8CC6 /* CurrencyTextFieldFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,8 +480,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"TipSplitr/Preview Content\"";
 				DEVELOPMENT_TEAM = 4475S8NVSN;
@@ -481,7 +495,7 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisDisdero.TipSplitr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TipSplitr App Store";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,6 +507,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4475S8NVSN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)Events/TipSplitrEvents/build/xcode-frameworks",
+				);
 				INFOPLIST_FILE = TipSplitrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,6 +531,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4475S8NVSN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)Events/TipSplitrEvents/build/xcode-frameworks",
+				);
 				INFOPLIST_FILE = TipSplitrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

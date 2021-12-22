@@ -10,11 +10,11 @@ import Foundation
 class TipCalculator {
     
     var checkAmount: Decimal = 0
-    var numberOfPeople = 0
+    var numberOfPeople = 1
     var tipPercentage: Decimal = 0
-
+    
     var totalAmount: Decimal {
-        return checkAmount * tipPercentage + checkAmount
+        return checkAmount + (Decimal(numberOfPeople) * totalPerPerson)
     }
     
     var totalPerPerson: Decimal {
@@ -22,6 +22,7 @@ class TipCalculator {
         guard peopleCount > 0 else {
             return 0
         }
-        return (checkAmount * tipPercentage) / peopleCount
+        let rawAmount = (checkAmount * tipPercentage) / peopleCount
+        return rawAmount.rounded(places: NumberFormatter.currency.minimumFractionDigits)
     }
 }

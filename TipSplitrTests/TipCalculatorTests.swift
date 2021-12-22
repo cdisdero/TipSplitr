@@ -45,7 +45,7 @@ class TipCalculatorTests: XCTestCase {
         calculator.numberOfPeople = 0
         calculator.tipPercentage = 0.10
         XCTAssertEqual(0, calculator.totalPerPerson)
-        XCTAssertEqual(110, calculator.totalAmount)
+        XCTAssertEqual(100, calculator.totalAmount)
 
         calculator.checkAmount = 100
         calculator.numberOfPeople = 4
@@ -57,13 +57,13 @@ class TipCalculatorTests: XCTestCase {
         calculator.numberOfPeople = -2
         calculator.tipPercentage = 0.20
         XCTAssertEqual(0, calculator.totalPerPerson)
-        XCTAssertEqual(120, calculator.totalAmount)
+        XCTAssertEqual(100, calculator.totalAmount)
 
         calculator.checkAmount = 100
         calculator.numberOfPeople = -2
         calculator.tipPercentage = -0.20
         XCTAssertEqual(0, calculator.totalPerPerson)
-        XCTAssertEqual(80, calculator.totalAmount)
+        XCTAssertEqual(100, calculator.totalAmount)
 
         calculator.checkAmount = 0
         calculator.numberOfPeople = 0
@@ -86,7 +86,7 @@ class TipCalculatorTests: XCTestCase {
         
         calculator.checkAmount = 100
         calculator.tipPercentage = 0.20
-        XCTAssertEqual(0, calculator.totalPerPerson)
+        XCTAssertEqual(20, calculator.totalPerPerson)
         XCTAssertEqual(120, calculator.totalAmount)
     }
 
@@ -128,5 +128,25 @@ class TipCalculatorTests: XCTestCase {
 
         XCTAssertEqual(0, calculator.totalPerPerson)
         XCTAssertEqual(0, calculator.totalAmount)
+    }
+
+    func testValidInputsAmountAndThreePeople18Specified() throws {
+        let calculator = TipCalculator()
+        
+        calculator.checkAmount = 25
+        calculator.numberOfPeople = 3
+        calculator.tipPercentage = 0.18
+        XCTAssertEqual(calculator.totalPerPerson, 1.5, accuracy: 0.001)
+        XCTAssertEqual(calculator.totalAmount, 29.5, accuracy: 0.001)
+    }
+
+    func testValidInputsAmountAndThreePeople10Specified() throws {
+        let calculator = TipCalculator()
+        
+        calculator.checkAmount = 25
+        calculator.numberOfPeople = 3
+        calculator.tipPercentage = 0.10
+        XCTAssertEqual(calculator.totalPerPerson, 0.83, accuracy: 0.001)
+        XCTAssertEqual(calculator.totalAmount, 27.49, accuracy: 0.001)
     }
 }

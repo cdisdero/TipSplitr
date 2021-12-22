@@ -16,7 +16,7 @@ class MainViewModel: ObservableObject {
     
     init(
         tipPercentages: [Decimal] = [0, 0.1, 0.18, 0.25, 0.30],
-        peopleNumberRange: Range<Int> = 2..<100) {
+        peopleNumberRange: Range<Int> = 1..<101) {
         self.tipPercentages = tipPercentages
         self.peopleNumberRange = peopleNumberRange
         self.tipCalculator = TipCalculator()

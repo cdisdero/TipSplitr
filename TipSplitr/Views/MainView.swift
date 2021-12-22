@@ -33,14 +33,19 @@ struct MainView: View {
                     .padding(fieldInsets)
                 }
                 Section(header: Text("calculator.screen.header.tippercentage".localized)) {
-                    Picker("calculator.screen.picker.label.tippercentage".localized,
-                           selection: $viewModel.tipPercentagesIndexSelected) {
-                        ForEach(0..<viewModel.tipPercentages.count) { index in
-                            Text("\(NumberFormatter.percents.string(for: self.viewModel.tipPercentages[index]) ?? "")")
+                    HStack {
+                        Picker("calculator.screen.picker.label.tippercentage".localized,
+                               selection: $viewModel.tipPercentagesIndexSelected) {
+                            ForEach(0..<viewModel.tipPercentages.count) { index in
+                                Text("\(NumberFormatter.percents.string(for: self.viewModel.tipPercentages[index]) ?? "")")
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding(fieldInsets)
+                        Button("+") {
+                            print("ouch")
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding(fieldInsets)
                 }
                 Section(header: Text("calculator.screen.header.amountperperson".localized)) {
                     Text(CurrencyTextFieldFormatter().displayString(for: viewModel.totalPerPerson))
