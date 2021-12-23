@@ -13,6 +13,12 @@ struct MainView: View {
     
     @ObservedObject private var viewModel = MainViewModel()
     
+    private enum Field: Int, Hashable {
+        case amount
+    }
+
+    @FocusState private var focusedField: Field?
+
     var body: some View {
         NavigationView {
             Form {
@@ -22,6 +28,7 @@ struct MainView: View {
                                        formatter: CurrencyTextFieldFormatter())
                         .padding(fieldInsets)
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .amount)
                 }
                 Section(header: Text("calculator.screen.header.numberofpeople".localized)) {
                     Picker("\(viewModel.numberOfPeople)", selection: $viewModel.numberOfPeopleIndexSelected) {
@@ -42,7 +49,7 @@ struct MainView: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .padding(fieldInsets)
-                        Button("+") {
+                        Button("Other") {
                             print("ouch")
                         }
                     }
@@ -57,6 +64,11 @@ struct MainView: View {
                 }
             }
             .navigationBarTitle("app.title".localized)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    focusedField = .amount
+                }
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

@@ -27,19 +27,15 @@ struct FormattedTextField<Formatter: TextFieldFormatter>: View {
         HStack {
             TextField(title, text: Binding(get: {
                 if self.isEditing {
-                    print("get() - editingValue = \(self.editingValue)")
                     return self.editingValue
                 } else {
                     let displayValue = self.formatter.displayString(for: self.value.wrappedValue)
-                    print("get() - displayValue = \(displayValue)")
                     return displayValue
                 }
             }, set: { string in
                 self.editingValue = string
                 self.value.wrappedValue = self.formatter.value(from: string)
-                print("set() - editingValue = \(string), value = \(self.value.wrappedValue)")
             }), onEditingChanged: { isEditing in
-                print("onEditingChanged() - isEditing = \(isEditing)")
                 self.isEditing = isEditing
                 self.editingValue = self.formatter.editingString(for: self.value.wrappedValue)
             })
